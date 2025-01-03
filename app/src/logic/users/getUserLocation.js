@@ -8,12 +8,12 @@ export default function getUserLocation() {
       reject(new SystemError('Geolocation is not supported by your browser.'))
       return
     }
-    TODO
+
     navigator.geolocation.getCurrentPosition(
-      () => {
+      (position) => {
         resolve({
-          lat: 36.65911827117031,
-          lon: -4.758748787000305,
+          lat: position.coords.latitude,
+          lon: position.coords.longitude,
         })
       },
       (error) => {
