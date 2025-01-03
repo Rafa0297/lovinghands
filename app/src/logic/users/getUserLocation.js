@@ -8,7 +8,7 @@ export default function getUserLocation() {
       reject(new SystemError('Geolocation is not supported by your browser.'))
       return
     }
-
+    TODO
     navigator.geolocation.getCurrentPosition(
       () => {
         resolve({
