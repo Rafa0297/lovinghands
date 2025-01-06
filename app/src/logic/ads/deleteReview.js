@@ -6,7 +6,7 @@ export default (adId, reviewId) => {
   validate.id(adId, 'adId')
   validate.id(reviewId, 'reviewId')
 
-  return fetch(`http://${import.meta.env.VITE_API_URL}/ads/${adId}/reviews/${reviewId}`, {
+  return fetch(`${import.meta.env.VITE_API_URL}/ads/${adId}/reviews/${reviewId}`, {
     method: 'DELETE',
     headers: {
       Authorization: `Bearer ${localStorage.token}`,

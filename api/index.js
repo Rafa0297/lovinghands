@@ -12,6 +12,15 @@ db.connect(process.env.MONGO_URL).then(() => {
 
   server.use(cors())
 
+  const corsOptions = {
+    origin: 'https://lovinghands.netlify.app',
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
+    preflightContinue: false,
+    optionsSuccessStatus: 204,
+  }
+
+  server.use(cors(corsOptions))
+
   server.get('/', (_, res) => res.send('Hello, API!'))
 
   server.use('/users', usersRouter)

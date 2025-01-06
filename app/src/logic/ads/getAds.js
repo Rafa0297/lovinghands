@@ -3,7 +3,7 @@ import { errors } from 'common'
 const { SystemError } = errors
 
 export default () =>
-  fetch(`http://${import.meta.env.VITE_API_URL}/ads`, {
+  fetch(`${import.meta.env.VITE_API_URL}/ads`, {
     headers: {
       Authorization: `Bearer ${localStorage.token}`,
     },

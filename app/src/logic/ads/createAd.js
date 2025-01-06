@@ -7,7 +7,7 @@ export default (files, text, location) => {
   validate.text(text)
   validate.location(location)
 
-  return fetch(`http://${import.meta.env.VITE_API_URL}/ads`, {
+  return fetch(`${import.meta.env.VITE_API_URL}/ads`, {
     method: 'POST',
     headers: {
       Authorization: `Bearer ${localStorage.token}`,

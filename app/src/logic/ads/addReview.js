@@ -6,7 +6,7 @@ export default (adId, comment, calification) => {
   validate.id(adId, 'adId')
   validate.text(comment)
 
-  return fetch(`http://${import.meta.env.VITE_API_URL}/ads/${adId}/reviews`, {
+  return fetch(`${import.meta.env.VITE_API_URL}/ads/${adId}/reviews`, {
     method: 'POST',
     headers: {
       Authorization: `Bearer ${localStorage.token}`,
