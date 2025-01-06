@@ -1,5 +1,5 @@
 {
-  "name": "dat",
+  "name": "data",
   "version": "1.0.0",
   "type": "module",
   "main": "index.js",
@@ -11,6 +11,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "data": "^1.0.0",
     "mongoose": "^8.8.2"
   },
   "devDependencies": {

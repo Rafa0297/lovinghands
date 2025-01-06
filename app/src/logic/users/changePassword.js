@@ -1,4 +1,4 @@
-import { errors, validate } from 'com'
+import { errors, validate } from 'common'
 
 const { SystemError } = errors
 

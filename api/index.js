@@ -1,5 +1,5 @@
 import 'dotenv/config'
-import db from '../dat/index.js'
+import db from './data/index.js'
 import express from 'express'
 import cors from 'cors'
 

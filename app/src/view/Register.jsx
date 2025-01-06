@@ -1,6 +1,6 @@
 import Logo from '../assets/logo.png'
 import logic from '../logic'
-import { errors } from 'com'
+import { errors } from 'common'
 import useContext from './useContext'
 import { PasswordInput } from './components/library/index.js'
 

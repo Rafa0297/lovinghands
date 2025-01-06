@@ -1,5 +1,5 @@
 import 'dotenv/config'
-import db from 'dat'
+import db from '../../data/index.js'
 import addReview from './addReview.js'
 
 db.connect(process.env.MONGO_URL_TEST)
