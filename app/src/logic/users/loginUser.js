@@ -1,4 +1,4 @@
-import { validate, errors } from 'com'
+import { validate, errors } from 'common'
 
 const { SystemError } = errors
 
@@ -6,7 +6,7 @@ export default (email, password) => {
   validate.email(email)
   validate.password(password)
 
-  return fetch(`http://${import.meta.env.VITE_API_URL}/users/auth`, {
+  return fetch(`${import.meta.env.VITE_API_URL}/users/auth`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ email, password }),

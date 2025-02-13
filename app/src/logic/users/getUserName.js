@@ -1,4 +1,4 @@
-import { errors } from 'com'
+import { errors } from 'common'
 import { extractPayloadFromJWT } from '../../utils'
 
 const { SystemError } = errors
@@ -6,7 +6,7 @@ const { SystemError } = errors
 export default () => {
   const { sub: userId } = extractPayloadFromJWT(localStorage.token)
 
-  return fetch(`http://${import.meta.env.VITE_API_URL}/users/${userId}/name`, {
+  return fetch(`${import.meta.env.VITE_API_URL}/users/${userId}/name`, {
     headers: {
       method: 'GET',
       Authorization: `Bearer ${localStorage.token}`,

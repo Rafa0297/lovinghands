@@ -7,9 +7,9 @@ import bcrypt from 'bcryptjs'
 chai.use(chaiAsPromised)
 const { expect } = chai
 
-import db, { User, Ad } from 'dat'
+import db, { User, Ad } from '../../data/index.js'
 
-import { errors } from 'com'
+import { errors } from 'common'
 const { NotFoundError, OwnershipError } = errors
 import deleteAd from './deleteAd.js'
 

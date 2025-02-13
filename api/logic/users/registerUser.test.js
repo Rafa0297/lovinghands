@@ -1,5 +1,5 @@
 import 'dotenv/config'
-import db from 'dat'
+import db from '../../data/index.js'
 
 import registerUser from './registerUser.js'
 

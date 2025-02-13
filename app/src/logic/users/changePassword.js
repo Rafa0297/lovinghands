@@ -1,4 +1,4 @@
-import { errors, validate } from 'com'
+import { errors, validate } from 'common'
 
 const { SystemError } = errors
 
@@ -7,7 +7,7 @@ export default (oldPassword, newPassword, newPasswordRepeat) => {
   validate.password(newPassword)
   validate.passwordsMatch(newPassword, newPasswordRepeat)
 
-  return fetch(`http://${import.meta.env.VITE_API_URL}/users/changePassword`, {
+  return fetch(`${import.meta.env.VITE_API_URL}/users/changePassword`, {
     method: 'POST',
     headers: {
       Authorization: `Bearer ${localStorage.token}`,

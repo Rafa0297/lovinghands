@@ -1,6 +1,6 @@
-import { User, Ad, Review } from 'dat'
+import { User, Ad, Review } from '../../data/index.js'
 
-import { validate, errors } from 'com'
+import { validate, errors } from 'common'
 const { SystemError, NotFoundError } = errors
 
 export default (userId, adId, comment, calification) => {

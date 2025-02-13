@@ -1,5 +1,5 @@
-import { User, Ad } from 'dat'
-import { validate, errors } from 'com'
+import { User, Ad } from '../../data/index.js'
+import { validate, errors } from 'common'
 
 const { NotFoundError, SystemError } = errors
 

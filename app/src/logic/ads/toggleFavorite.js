@@ -1,11 +1,11 @@
-import { validate, errors } from 'com'
+import { validate, errors } from 'common'
 
 const { SystemError } = errors
 
 export default (adId) => {
   validate.id(adId, 'adId')
 
-  return fetch(`http://${import.meta.env.VITE_API_URL}/ads/${adId}/favorites`, {
+  return fetch(`${import.meta.env.VITE_API_URL}/ads/${adId}/favorites`, {
     method: 'PATCH',
     headers: {
       Authorization: `Bearer ${localStorage.token}`,

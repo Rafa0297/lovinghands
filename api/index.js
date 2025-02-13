@@ -1,5 +1,5 @@
 import 'dotenv/config'
-import db from '../dat/index.js'
+import db from './data/index.js'
 import express from 'express'
 import cors from 'cors'
 
@@ -11,6 +11,15 @@ db.connect(process.env.MONGO_URL).then(() => {
   const server = express()
 
   server.use(cors())
+
+  const corsOptions = {
+    origin: 'https://lovinghands.netlify.app',
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
+    preflightContinue: false,
+    optionsSuccessStatus: 204,
+  }
+
+  server.use(cors(corsOptions))
 
   server.get('/', (_, res) => res.send('Hello, API!'))
 

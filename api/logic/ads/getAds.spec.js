@@ -6,8 +6,8 @@ chai.use(chaiAsPromised)
 const { expect } = chai
 
 import bcrypt from 'bcryptjs'
-import db, { User, Ad } from 'dat'
-import { errors } from 'com'
+import db, { User, Ad } from '../../data/index.js'
+import { errors } from 'common'
 
 const { NotFoundError, ValidationError, SystemError } = errors
 

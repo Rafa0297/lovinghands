@@ -7,7 +7,7 @@ chai.use(chaiAsPromised)
 const { expect } = chai
 
 import db, { User, Ad } from 'dat/index.js'
-import { errors } from 'com'
+import { errors } from 'common'
 
 const { NotFoundError, ValidationError, SystemError } = errors
 

@@ -1,9 +1,9 @@
-import { errors } from 'com'
+import { errors } from 'common'
 
 const { SystemError } = errors
 
 export default () =>
-  fetch(`http://${import.meta.env.VITE_API_URL}/ads/favorites`, {
+  fetch(`${import.meta.env.VITE_API_URL}/ads/favorites`, {
     headers: {
       Authorization: `Bearer ${localStorage.token}`,
     },

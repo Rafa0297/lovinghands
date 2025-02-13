@@ -1,4 +1,4 @@
-import { errors } from 'com'
+import { errors } from 'common'
 
 const { SystemError } = errors
 
@@ -10,10 +10,10 @@ export default function getUserLocation() {
     }
 
     navigator.geolocation.getCurrentPosition(
-      () => {
+      (position) => {
         resolve({
-          lat: 36.65911827117031,
-          lon: -4.758748787000305,
+          lat: position.coords.latitude,
+          lon: position.coords.longitude,
         })
       },
       (error) => {
