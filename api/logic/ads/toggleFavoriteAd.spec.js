@@ -6,7 +6,7 @@ import chaiAsPromised from 'chai-as-promised'
 chai.use(chaiAsPromised)
 const { expect } = chai
 
-import db, { User, Ad } from 'dat/index.js'
+import db, { User, Ad } from '../../data/index.js'
 import { errors } from 'common'
 
 const { NotFoundError, ValidationError, SystemError } = errors
@@ -45,17 +45,15 @@ describe('toggleFavoriteAd', () => {
       password: '123123123',
     })
 
-    await expect(toggleFavoriteAd(user._id.toString(), '012345678901234567890123')).to.be.rejectedWith(
-      NotFoundError,
-      /^ad not found$/
-    )
+    await expect(
+      toggleFavoriteAd(user._id.toString(), '012345678901234567890123')
+    ).to.be.rejectedWith(NotFoundError, /^ad not found$/)
   })
 
   it('fails on non-existing user', async () => {
-    await expect(toggleFavoriteAd('012345678901234567890123', '012345678901234567890123')).to.be.rejectedWith(
-      NotFoundError,
-      /^user not found$/
-    )
+    await expect(
+      toggleFavoriteAd('012345678901234567890123', '012345678901234567890123')
+    ).to.be.rejectedWith(NotFoundError, /^user not found$/)
   })
 
   after(() => db.disconnect())
